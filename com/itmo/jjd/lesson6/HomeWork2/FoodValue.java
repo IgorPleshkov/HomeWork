@@ -37,7 +37,7 @@ public class FoodValue {
     }
 
     public void setName(String name) {
-        if (name == null && name.trim().length() < 2)
+        if (name == null || name.trim().length() < 2)
             throw new IllegalArgumentException("Наименование д.б. не меньше 2-х символов!");
         this.name = name;
     }
