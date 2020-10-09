@@ -13,8 +13,8 @@ public class Application {
         FoodValue meat = new FoodValue("Мясо",30.0,8.0, 25.0);
         meat.setCalories(88.0);
 
-        FoodValue cheese = new FoodValue("Сыр",41.0,9.0, 20.0);
-        milk.setCalories(63.0);
+        FoodValue cheese = new FoodValue("Сыр",40.0,9.0, 20.0);
+        cheese.setCalories(63.0);
 
 
         MyFood myFood = new MyFood(10,40.0, 50.0, 30.0, 100.0);
