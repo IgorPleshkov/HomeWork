@@ -20,6 +20,7 @@ public class MyFood {
 
     public void addFood(FoodValue... food){
         int count = 0;
+        int addCount = 0;
        for (int i = 0; i < arrFood.length; i++){
            if (arrFood[i] == null && count < food.length){
                String foodName = food[count].getName();
@@ -45,11 +46,12 @@ public class MyFood {
                }
                arrFood[i] = food[count];
                count++;
+               addCount++;
            }
 
            }
 
-        if (count != food.length){
+        if (addCount != food.length){
             System.out.println("Не все продукты добавлены!");
        }
     }
