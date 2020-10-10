@@ -23,7 +23,7 @@ public class School {
     public void addTeacher(Teacher... teacher) {
         int count = 0;
         for (int i = 0; i < teachers.length; i++) {
-            if (teachers[i] == null && count < teacher.length) {
+            if (teachers[i] == null || count < teacher.length) {
                 teachers[i] = teacher[count];
                 count++;
             }
@@ -33,7 +33,7 @@ public class School {
     public void addPupil(Pupil... pupil) {
         int count = 0;
         for (int i = 0; i < pupils.length; i++) {
-            if (pupils[i] == null && count < pupil.length) {
+            if (pupils[i] == null || count < pupil.length) {
                 pupils[i] = pupil[count];
                 count++;
             }
