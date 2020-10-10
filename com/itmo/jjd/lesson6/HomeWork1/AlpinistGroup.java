@@ -12,7 +12,7 @@ public class AlpinistGroup {
 
     public AlpinistGroup (int numberOfPersons, Mountain mountain){
         if (numberOfPersons < minNumberOfPersons || numberOfPersons > maxNumberOfPersons)
-            throw new IllegalArgumentException("Количество человек в группе не может быть меньше 3-х");
+            throw new IllegalArgumentException("Количество человек в группе д.б. от 1 до 10");
         alpinists = new Alpinist[numberOfPersons];
         this.mountain = mountain;
     }
