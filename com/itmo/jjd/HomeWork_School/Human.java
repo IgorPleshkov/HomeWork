@@ -1,4 +1,4 @@
-package com.itmo.jjd.lesson7.HomeWork_School;
+package com.itmo.jjd.HomeWork_School;
 
 abstract public class Human {
     protected String name;

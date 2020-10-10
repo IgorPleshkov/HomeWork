@@ -1,6 +1,4 @@
-package com.itmo.jjd.lesson7.HomeWork_School;
-
-import java.util.Arrays;
+package com.itmo.jjd.HomeWork_School;
 
 public class Application {
     public static void main(String[] args) {

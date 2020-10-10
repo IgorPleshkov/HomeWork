@@ -1,4 +1,4 @@
-package com.itmo.jjd.lesson7.HomeWork_School;
+package com.itmo.jjd.HomeWork_School;
 
 public class Pupil extends Human implements ToStudyAble {
     private int knowledgeLevel;
