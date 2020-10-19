@@ -2,7 +2,7 @@ package com.itmo.jjd.Fitness;
 
 import java.time.LocalDate;
 
-public class IsValidDate {
+abstract public class IsValidDate {
     public static boolean isValidDate(String date) {
         try {
             LocalDate.parse(date);
