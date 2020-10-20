@@ -25,7 +25,10 @@ public class Service {
         String surname = arrStr[1];
         String pos = arrStr[2];
 
-       User user = new User(name + " " + surname, returnPosition(pos));
+        Position position = returnPosition(pos);
+        if (Objects.isNull(position)) return null;
+
+       User user = new User(name + " " + surname, position);
        return user;
     }
 
@@ -40,7 +43,10 @@ public class Service {
             String str = scanner.nextLine();
             if (str.equals("exit")) break;
             User user = Service.createUser(str);
-            if (Objects.isNull(user)) continue;
+            if (Objects.isNull(user)) {
+                System.out.println("Данные введены не корректно. Повторите!");
+                continue;
+            }
             personnel.addUser(user, user.getPosition());
         }
         personnel.personnelInfo();
