@@ -33,7 +33,10 @@ public class Service {
         Scanner scanner = new Scanner(System.in);
         Personnel personnel = new Personnel();
         while (true) {
-            System.out.println("Введите через пробел Имя Фамилию и первую букву должности, для выхода ввести exit:");
+            System.out.println("Введите через пробел Имя Фамилию и первую букву должности " +
+                    "латиницей:" +
+                    "\nс - кассир, m - менеджер, a - бухгалтер, d - директор " +
+                    "\nдля выхода ввести exit:");
             String str = scanner.nextLine();
             if (str.equals("exit")) break;
             User user = Service.createUser(str);

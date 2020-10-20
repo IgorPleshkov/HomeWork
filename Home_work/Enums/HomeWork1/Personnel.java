@@ -10,7 +10,7 @@ public class Personnel {
 
     public void addUser(User user, Position position) {
         boolean success = false;
-        if (position.equals(Position.КАССИР)) {
+        if (position.equals(Position.CASHIER)) {
             for (int i = 0; i < cashier.length; i++) {
                 if (Objects.isNull(cashier[i])){
                     cashier[i] = user;
@@ -19,7 +19,7 @@ public class Personnel {
                 }
             }
         }
-        if (position.equals(Position.МЕНЕДЖЕР)) {
+        if (position.equals(Position.MANAGER)) {
             for (int i = 0; i < manager.length; i++) {
                 if (Objects.isNull(manager[i])) {
                     manager[i] = user;
@@ -28,7 +28,7 @@ public class Personnel {
                 }
             }
         }
-        if (position.equals(Position.БУХГАЛТЕР)) {
+        if (position.equals(Position.ACCOUNTANT)) {
             for (int i = 0; i < accountant.length; i++) {
                 if (Objects.isNull(accountant[i])) {
                     accountant[i] = user;
@@ -37,7 +37,7 @@ public class Personnel {
                 }
             }
         }
-        if (position.equals(Position.ДИРЕКТОР)) {
+        if (position.equals(Position.DIRECTOR)) {
             for (int i = 0; i < director.length; i++) {
                 if (Objects.isNull(director[i])) {
                     director[i] = user;
