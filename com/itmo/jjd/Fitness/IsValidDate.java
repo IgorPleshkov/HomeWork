@@ -2,12 +2,14 @@ package com.itmo.jjd.Fitness;
 
 import java.time.LocalDate;
 
-abstract public class IsValidDate {
+public class IsValidDate extends Exception {
     public static boolean isValidDate(String date) {
         try {
             LocalDate.parse(date);
             return true;
-        } catch (Exception e) { return false;}
-       // return false;
+        } catch (Exception e) {
+            return false;
+        }
+
     }
 }
