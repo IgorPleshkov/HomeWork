@@ -14,8 +14,8 @@ public class StartProgram {
         }
         //----------------
         try {
-           int[] arr = new int[5];
-           arr[6] = 11;
+            int[] arr = new int[5];
+            arr[6] = 11;
         } catch (Exception e) {
             exceptions[1] = e;
         }
@@ -58,9 +58,9 @@ public class StartProgram {
         //----------------
         //----------------
 
-        for (Exception e : exceptions){
+        for (Exception e : exceptions) {
             if (!(e == null))
-          System.out.println(e.getMessage());
+                System.out.println(e.getMessage());
         }
     }
 
