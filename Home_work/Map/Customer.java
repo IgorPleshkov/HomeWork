@@ -1,4 +1,4 @@
-package com.itmo.jjd.Lesson16.HomeWork;
+package Home_work.Map;
 
 public class Customer {
     private String name;

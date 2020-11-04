@@ -1,6 +1,6 @@
-package com.itmo.jjd.Lesson16.HomeWork;
+package Home_work.Map;
 
-import com.itmo.jjd.Lesson16.User;
+import Home_work.Map.Customer;
 
 import java.util.*;
 
