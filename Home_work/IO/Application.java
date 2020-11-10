@@ -1,6 +1,5 @@
 package Home_work.IO;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
