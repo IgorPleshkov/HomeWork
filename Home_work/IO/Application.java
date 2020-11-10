@@ -1,8 +1,6 @@
 package Home_work.IO;
 
-import java.awt.image.BufferedImage;
 import java.io.*;
-
 
 public class Application {
     public static void main(String[] args) {
