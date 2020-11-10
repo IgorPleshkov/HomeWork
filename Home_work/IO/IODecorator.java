@@ -19,3 +19,4 @@ class IODecorator extends FilterOutputStream {
         out.write(b);
     }
 }
+
