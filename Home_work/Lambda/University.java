@@ -22,4 +22,13 @@ public class University {
         courses.removeIf(filter);
         return courses;
     }
+
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        for (Course c : courses){
+            sb.append(c.getName()).append(", ").append(c.getPrice()).append(", ").append(c.getDuration()).append(" | ");
+        }
+        return sb.toString();
+    }
 }
