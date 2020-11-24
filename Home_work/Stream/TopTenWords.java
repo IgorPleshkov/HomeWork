@@ -25,8 +25,6 @@ public class TopTenWords {
         // методы вызывать по цепочке,
         // цепочку не разрывать (пока не получите результирующую мапу)
 
-        // System.out.println(map);
-        int i = 0;
         try {
             Map<String, Long> map = Files.lines(Paths.get("somefile.txt"))
                     .flatMap(s -> Stream.of(s.split(" ")))
