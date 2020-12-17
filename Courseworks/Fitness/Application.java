@@ -1,8 +1,7 @@
-package com.itmo.jjd.Fitness;
+package Courseworks.Fitness;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.Month;
 
 public class Application {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.itmo.jjd.Fitness;
+package Courseworks.Fitness;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

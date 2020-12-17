@@ -1,8 +1,4 @@
-package com.itmo.jjd.Fitness;
-
-import java.time.LocalTime;
-
-import com.itmo.jjd.Fitness.FitnessConfiguration;
+package Courseworks.Fitness;
 
 public class SeasonTicket extends Ticket {
 
