@@ -40,7 +40,7 @@ public class ProcessGame {
             while (true) {
                 if (scanner.hasNextInt()) {
                     choice = scanner.nextInt();
-                    if (choice > countGame) {
+                    if (choice > countGame || choice <= 0) {
                         System.out.println("Нет такого пункта. Попробуйте снова:");
                         continue;
                     } else break;
@@ -92,7 +92,7 @@ public class ProcessGame {
             }
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
-                if (choice <= listFiles.size()) {
+                if (choice > 0 && choice <= listFiles.size()) {
                     try (FileInputStream fileInput = new FileInputStream(listFiles.get(choice));
                          ObjectInputStream objectInput = new ObjectInputStream(fileInput)) {
                         structureGame = (StructureGame) objectInput.readObject();

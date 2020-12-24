@@ -26,7 +26,7 @@ public class Application {
             }
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
-                if (choice <= menu.getCommand().size()) {
+                if (choice > 0 && choice <= menu.getCommand().size()) {
                     menu.execute(choice);
                     break;
                 }
