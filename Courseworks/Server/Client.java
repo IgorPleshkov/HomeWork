@@ -45,7 +45,7 @@ public class Client {
             Thread.sleep(1000);
             System.out.println("Для отправки сообщения введите 1.");
             System.out.println("Для отправки файла введите 2.");
-            System.out.println("Для загрузки файла с сервера введите 3.");
+            System.out.println("Список загруженных на сервер файлов 3.");
             System.out.println("Выбор файла для загрузки 4.");
             System.out.println("Для выхода введите exit.");
             choice = scanner.nextLine();
