@@ -1,5 +1,6 @@
 package Courseworks.Server;
 
+import java.io.File;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -7,10 +8,18 @@ public class Message implements Serializable {
     private String sender;
     private String text;
     private LocalDateTime dateTime;
+    private File file;
+    private String fileInfo;
+    private String listFiles;
+    private Integer selectFile;
 
-    public Message(String sender, String text) {
+    public Message(String sender, String text, File file, String fileInfo, String listFiles, Integer selectFile) {
         this.sender = sender;
         this.text = text;
+        this.file = file;
+        this.fileInfo = fileInfo;
+        this.listFiles = listFiles;
+        this.selectFile = selectFile;
     }
 
     public String getSender() {
@@ -33,6 +42,39 @@ public class Message implements Serializable {
         dateTime = LocalDateTime.now();
     }
 
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
+    public String getFileInfo() {
+        return fileInfo;
+    }
+
+    public void setFileInfo(String fileInfo) {
+        this.fileInfo = fileInfo;
+    }
+
+    public String getListFiles() {
+        return listFiles;
+    }
+
+    public void setListFiles(String listFiles) {
+        this.listFiles = listFiles;
+    }
+
+    public Integer getSelectFile() {
+        return selectFile;
+    }
+
+    public void setSelectFile(Integer listFiles) {
+        this.selectFile = selectFile;
+    }
+
+
 
     @Override
     public String toString() {
@@ -43,7 +85,7 @@ public class Message implements Serializable {
                 '}';
     }
 
-    public static Message getMessage(String sender, String text) {
-        return new Message(sender, text);
+    public static Message getMessage(String sender, String text, File file, String fileInfo, String listFiles, Integer selectFile) {
+        return new Message(sender, text, file, fileInfo, listFiles, selectFile);
     }
 }

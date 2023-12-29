@@ -5,7 +5,7 @@ import com.sun.jdi.ClassNotPreparedException;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Objects;
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -13,6 +13,7 @@ public class Server {
     private static final int PORT = 8090;
     private CopyOnWriteArraySet<Connection> senders = new CopyOnWriteArraySet<>();
     private LinkedBlockingQueue<Message> messages = new LinkedBlockingQueue<>();
+    private ArrayList<SaveFiles> files = new ArrayList<SaveFiles>();
 
     public void start() throws IOException {
         ServerSocket serverSocket = new ServerSocket(PORT);
@@ -61,13 +62,46 @@ public class Server {
                     messageOut = messages.take();
                     String sender = messageOut.getSender();
                     for (Connection c : senders) {
-                        if (!Objects.requireNonNull(sender).equals(c.getSender())) {
+                        //if (!Objects.requireNonNull(sender).equals(c.getSender())) {
+                        if (messageOut.getFile() != null) {
+                            SaveFiles file = new SaveFiles(messageOut.getFileInfo(), messageOut.getFile());
+                            files.add(file);
+                            Message saveFiles = new Message(sender, "", file.getFile(), file.getFileInfo(), null, null);
+                            try {
+                                c.sendMessage(saveFiles);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else if (messageOut.getText().equals("3")) {
+                            StringBuilder str = new StringBuilder();
+                            int count = 0;
+                            for (SaveFiles f : files) {
+                                str.append("\n");
+                                str.append(count + ". Описание файла: " + f.getFileInfo() + ". Файл: " + f.getFile().getName());
+                                str.append("\n");
+                                count++;
+                            }
+                            Message messageFiles = new Message(sender, "", null, null, str.toString(), null);
+                            try {
+                                c.sendMessage(messageFiles);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else if (messageOut.getSelectFile() != null) {
+                            Message messageFileOut = new Message(sender, "", files.get(messageOut.getSelectFile()).getFile(), null, null, messageOut.getSelectFile());
+                            try {
+                                c.sendMessage(messageFileOut);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
                             try {
                                 c.sendMessage(messageOut);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         }
+                       // }
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
